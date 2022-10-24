@@ -5,16 +5,19 @@
 // li[4].style.fontWeight='bold'
 
 
-var items=document.getElementsByClassName('recovery');
+// var items=document.getElementsByClassName('list-group-item');
+// console.log(items);
+// console.log(items[4]);
+// items[2].style.backgroundColor= 'green'
+
+
+//QuerrySelectorAll//
+var items=document.querySelectorAll('.list-group-item')
 console.log(items);
-console.log(items[4]);
-items[4].style.backgroundColor= 'green'
-items[4].style.fontWeight='bold'
-items[4].textContent='Hello'
+items[1].style.color='green'
 
+var odd=document.querySelectorAll('li:nth-child(odd)');
 
-
-
-
-
-
+for(var i=0;i<odd.length;i++){
+    odd[i].style.backgroungColor='#00FF00'
+}
