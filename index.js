@@ -1,23 +1,82 @@
-// var li=document.getElementsByTagName('li');
-// console.log(li);
-// console.log(li[4]);
-// li[4].style.backgroundColor= 'green'
-// li[4].style.fontWeight='bold'
+//TRAVERSING THE DOM//
+var itemList= document.querySelector('#items');
+//parentNode
+// console.log(itemList.parentNode);
+// itemList.parentNode.style.backgroundColor='#f4f4f4'
+// console.log(itemList.parentNode.parentNode);
 
 
-// var items=document.getElementsByClassName('list-group-item');
-// console.log(items);
-// console.log(items[4]);
-// items[2].style.backgroundColor= 'green'
+
+//parentElement
+console.log(itemList.parentElement);
+itemList.parentElement.style.backgroundColor='#f4f4f4'
+console.log(itemList.parentElement.parentElement);
 
 
-//QuerrySelectorAll//
-var items=document.querySelectorAll('.list-group-item')
-console.log(items);
-items[1].style.color='green'
+//chileNodes
+// console.log(itemList.childNodes);
 
-var odd=document.querySelectorAll('li:nth-child(odd)');
+console.log(itemList.children);
+console.log(itemList.children[1]);
+itemList.children[1].style.backgroundColor='yellow'
 
-for(var i=0;i<odd.length;i++){
-    odd[i].style.backgroungColor='#00FF00'
-}
+
+// //FirstChild
+// console.log(itemList.firstChild);
+
+// //firstElemntChild
+// console.log(itemList.firstElementChild);
+// itemList.firstElementChild.textContent= 'Hello 1';
+
+
+//lastChild
+// console.log(itemList.lastChild);
+
+//lastElemntChild
+// console.log(itemList.lastElementChild);
+// itemList.lastElementChild.textContent= 'Hello 4';
+
+
+//nextSibling
+// console.log(itemList.nextSibling);
+//nextElementSibling
+// console.log(itemList.nextElementSibling);
+
+//previousSibling
+// console.log(itemList.previousSibling);
+//previousElementSibiling
+// console.log(itemList.previousElementSibling);
+// itemList.previousElementSibling.style.color='green';
+
+
+//createElement
+
+//Create a div
+
+var newDiv = document.createElement('div');
+
+//Add Class
+newDiv.className = 'hello';
+
+
+//Add id
+newDiv.id= 'hello 1';
+
+//Add Attribute
+newDiv.setAttribute('title', 'Hello Div');
+
+//Creat text node
+var newDivText= document.createTextNode('HEllo');
+
+//Add text to div 
+newDiv.appendChild(newDivText);
+
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
+
+console.log(newDiv);
+
+container.insertBefore(newDiv , h1);
+
+
+
