@@ -48,4 +48,5 @@ function store(name, email) {
   myarr.push(person);
   window.localStorage.setItem('data', JSON.stringify(myarr));
   console.log(JSON.parse(localStorage.getItem('data')));
+  let arr =  JSON.parse(localStorage.getItem("data")) || arr;
 }
