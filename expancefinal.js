@@ -8,7 +8,7 @@ function saveToCrudCrud(event) {
       dis,
       cat
   }
-  axios.post("https://crudcrud.com/api/09b84bc7203e4e2cb11a6d131aa4942b/ExpenseTracker",expance)
+  axios.post("https://crudcrud.com/api/1318943b2e54489595603288b1ad2071/ExpenseTracker",expance)
     .then(res => console.log(res))
     .catch(err => console.error(err))
 
@@ -18,7 +18,7 @@ function saveToCrudCrud(event) {
 }
 window.addEventListener('DOMContentLoaded', (event) => {
 
-  axios.get("https://crudcrud.com/api/09b84bc7203e4e2cb11a6d131aa4942b/ExpenseTracker")
+  axios.get("https://crudcrud.com/api/1318943b2e54489595603288b1ad2071/ExpenseTracker")
     .then(res=>{
         for(let i=0 ; i<res.data.length ; i++)
         {
@@ -29,10 +29,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function showNewUserOnScreen(user) {
-  // console.log(localStorage.getItem(user.email));
-  if(localStorage.getItem(user.dis)!== null) {
-      removeUserFromScreen(user.dis);
-  }
+ 
+  
   const parentNode  = document.getElementById('ListOfexp');
   const childHTML = `<li id=${user._id}> ${user.Amount} - ${user.dis} - ${user.cat}
   
@@ -42,16 +40,16 @@ function showNewUserOnScreen(user) {
   parentNode.innerHTML = parentNode.innerHTML + childHTML;
 }
 function deleteUser(Id) {
-  axios.delete(`https://crudcrud.com/api/09b84bc7203e4e2cb11a6d131aa4942b/ExpenseTracker/${Id}`)
+  axios.delete(`https://crudcrud.com/api/1318943b2e54489595603288b1ad2071/ExpenseTracker/${Id}`)
   removeUserFromScreen(Id);
 }
  
 function removeUserFromScreen(Id) {
   const parentNode = document.getElementById('ListOfexp');
 const childNodeToBeDeleted = document.getElementById(`${Id}`);
-  if(childNodeToBeDeleted) {
+
       parentNode.removeChild(childNodeToBeDeleted);
-  }
+  
 }
 function editUserDetails ( Amount, dis, cat,Id) {
   document.getElementById('ExpAmount').value = Amount;
